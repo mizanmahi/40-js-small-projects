@@ -1,0 +1,87 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: inherit;
+}
+
+body {
+   font-weight: 400;
+   box-sizing: border-box;
+   line-height: 1.5;
+}
+
+header {
+   padding: 1rem 10rem;
+   background: #f7f7f7;
+}
+
+.nav {
+   display: flex;
+   color: slateblue;
+   justify-content: space-around;
+}
+
+.flipbtn {
+   border: 0;
+   padding: 0.8rem 1.5rem;
+   color: #ffffff;
+   background: rgb(106, 90, 206);
+   font-size: 1.2rem;
+   border-radius: 5px;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+}
+
+main {
+   height: calc(100vh - 80px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.display-color {
+   background: #f7f7f7;
+   padding: 2rem;
+   text-align: center;
+   border-radius: 5px;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   color: rgb(68, 55, 131);
+}
+
+h2 {
+   font-weight: 700;
+}
+
+h3 {
+   display: inline-block;
+   margin-bottom: 2rem;
+   padding: 0.5rem 0.9rem;
+   border-radius: 5px;
+   border: 1px solid slateblue;
+}
+
+.changebtn {
+   display: block;
+   margin: 0 auto;
+   border: 0;
+   padding: 0.8rem 1.5rem;
+   color: #ffffff;
+   background: rgb(106, 90, 206);
+   font-size: 1.2rem;
+   border-radius: 5px;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+   header {
+      padding: 1rem 3rem;
+   }
+   .nav {
+      flex-direction: column;
+      align-items: center;
+   }
+   main {
+      padding: 0 1rem;
+   }
+}
