@@ -14,7 +14,6 @@ btn.addEventListener("click", changeColor);
 
 function changeColor() {
    const randomColor = generateColor();
-
    document.body.style.backgroundColor = randomColor;
    colorEl.innerText = randomColor;
 }
