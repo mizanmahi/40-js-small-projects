@@ -1,100 +1,78 @@
 * {
-   margin: 0;
    padding: 0;
+   margin: 0;
    box-sizing: border-box;
 }
 
 body {
    height: 100vh;
-   background: #f7f7f7;
    display: flex;
    justify-content: center;
    align-items: center;
+   background: linear-gradient(45deg, salmon, limegreen);
 }
 
-/* label {
-   display: inline-block;
-   background: #000;
-   width: 90px;
-   height: 50px;
-   border-radius: 50px;
-   position: relative;
-   cursor: pointer;
-
-}
-
-input {
-   opacity: 0;
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   cursor: pointer;
-
-}
-
-.slider {
-   height: 40px;
-   width: 40px;
-   border-radius: 50%;
+.clock {
+   height: 300px;
+   width: 300px;
    background: #fff;
-   position: absolute;
-   left: 5px;
-   top: 5px;
-   transition: left .3s;
-}
-
-input:checked + .slider {
-   right: 5px;
-   left: 50%;
-}
-input:checked +  {
-   right: 5px;
-   left: 50%;
-} */
-
-/* ------------------- */
-
-
-
-.toggle-switch {
-   display: inline-block;
-   position: relative;
-   height: 44px;
-   width: 80px;
-}
-
-input {
-   display: none;
-}
-
-.slider {
-   position: absolute;
-   background-color: hsl(230, 22%, 74%);
-   height: 100%;
-   width: 100%;
-   cursor: pointer;
-   transition: 0.4s;
-   border-radius: 34px;
-}
-
-.slider:before {
-   content: "";
-   background-color: #fff;
-   height: 36px;
-   width: 36px;
-   bottom: 4px;
-   left: 4px;
-   position: absolute;
-   transition: 0.4s;
+   padding: 0.8rem;
+   border: 1rem solid rgb(44, 43, 43);
    border-radius: 50%;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+   position: relative;
 }
 
- input:checked + .slider {
-   background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+.clock-body {
+   position: relative;
+   width: 100%;
+   height: 100%;
 }
 
-input:checked + .slider:before {
-   transform: translateX(36px);
+.hand {
+   height: 4px;
+   width: 50%;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%) rotate(90deg);
+   transform-origin: 100%;
+   border-radius: 10px;
 }
 
+.sec-hand {
+   background: rgb(160, 160, 160);
+}
 
+.min-hand {
+   background: limegreen;
+}
+
+.hour-hand {
+   background: salmon;
+   height: 6px;
+}
+
+.circle {
+   height: 20px;
+   width: 20px;
+   background: rgb(44, 43, 43);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 50%;
+   z-index: 100;
+}
+
+a {
+   color: rgb(160, 160, 160);
+   display: inline-block;
+   text-decoration: none;
+   font-size: 1.2rem;
+   font-weight: 700;
+   letter-spacing: 2px;
+   position: absolute;
+   bottom: 2rem;
+   left: 50%;
+   transform: translateX(-50%);
+}
