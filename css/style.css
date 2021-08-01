@@ -1,3 +1,7 @@
+:root {
+   --color: salmon;
+}
+
 * {
    padding: 0;
    margin: 0;
@@ -9,70 +13,33 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
-   background: linear-gradient(45deg, salmon, limegreen);
+   background: linear-gradient(75deg, var(--color), orchid);
 }
 
-.clock {
-   height: 300px;
-   width: 300px;
-   background: #fff;
-   padding: 0.8rem;
-   border: 1rem solid rgb(44, 43, 43);
-   border-radius: 50%;
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-   position: relative;
+.container {
+   color: #fff;
+   font-size: 1.5rem;
+   font-weight: bold;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
-.clock-body {
-   position: relative;
+h1 {
+   margin-bottom: 2rem;
+}
+
+.img {
+   border: 2px solid var(--color);
+   width: 800px;
+   height: 500px;
+   margin-top: 5rem;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+}
+
+img {
    width: 100%;
    height: 100%;
-}
-
-.hand {
-   height: 4px;
-   width: 50%;
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%) rotate(90deg);
-   transform-origin: 100%;
-   border-radius: 10px;
-}
-
-.sec-hand {
-   background: rgb(160, 160, 160);
-}
-
-.min-hand {
-   background: limegreen;
-}
-
-.hour-hand {
-   background: salmon;
-   height: 6px;
-}
-
-.circle {
-   height: 20px;
-   width: 20px;
-   background: rgb(44, 43, 43);
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   border-radius: 50%;
-   z-index: 100;
-}
-
-a {
-   color: rgb(160, 160, 160);
-   display: inline-block;
-   text-decoration: none;
-   font-size: 1.2rem;
-   font-weight: 700;
-   letter-spacing: 2px;
-   position: absolute;
-   bottom: 2rem;
-   left: 50%;
-   transform: translateX(-50%);
+   object-fit: cover;
 }

@@ -1,33 +1,22 @@
-let htmlElemArr = [
-   "h2",
-   "div",
-   "h1",
-   "span",
-   "h3",
-   "section",
-   "main",
-   "header",
-];
+const imgContainer = document.querySelector(".img");
+const image = document.querySelector("img");
 
-function decent(str) {
+const ranges = document.querySelectorAll(".range");
 
-   let strArr = str.split(".");
-   let classArr = [];
+ranges.forEach((range) =>
+   range.addEventListener("change", update)
+);
 
-   strArr.forEach((el) => {
-      htmlElemArr.some((htmlEl) => {
-         if (htmlEl === el) {
-            classArr.push(htmlEl);
-         }
-      });
+ranges.forEach((range) =>
+   range.addEventListener("mousemove", update) // needed to instant update
+);
 
-      if (el.includes("--")) {
-         let slice = el.slice(0, el.indexOf("--"));
-         classArr.push(`[class=*="${slice + "--"}"]`);
-      }
-   });
-
-   console.log(classArr.join(""));
+function update () {
+   if (this.name === "spacing") {
+      imgContainer.style.borderWidth = `${this.value}px`;
+   } else if (this.name === "blur") {
+      image.style.filter = `blur(${this.value}px)`;
+   }else if(this.name === "color"){
+      document.documentElement.style.setProperty(`--${this.name}`, this.value)
+   }
 }
-
-decent("div.heading--2eONR.heading-2--1OnX8.title--3yncE.block--3v-Ow");
