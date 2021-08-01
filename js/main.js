@@ -1,22 +1,11 @@
-const imgContainer = document.querySelector(".img");
-const image = document.querySelector("img");
+const friends = ['mizan mahi', 'kamal zahmed', 'joe ray'];
 
-const ranges = document.querySelectorAll(".range");
 
-ranges.forEach((range) =>
-   range.addEventListener("change", update)
-);
+const sorted = friends.sort((firstOne, nextOne) => {
+  let first = firstOne.split(" ")[1][0];
+  let next = nextOne.split(" ")[1][0];
+  return first.charCodeAt(0) - next.charCodeAt(0);
+  
+})
 
-ranges.forEach((range) =>
-   range.addEventListener("mousemove", update) // needed to instant update
-);
-
-function update () {
-   if (this.name === "spacing") {
-      imgContainer.style.borderWidth = `${this.value}px`;
-   } else if (this.name === "blur") {
-      image.style.filter = `blur(${this.value}px)`;
-   }else if(this.name === "color"){
-      document.documentElement.style.setProperty(`--${this.name}`, this.value)
-   }
-}
+console.table(sorted)
