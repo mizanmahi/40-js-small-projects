@@ -1,23 +1,33 @@
-let secHand = document.querySelector(".sec-hand");
-let minHand = document.querySelector(".min-hand");
-let hourHand = document.querySelector(".hour-hand");
+let htmlElemArr = [
+   "h2",
+   "div",
+   "h1",
+   "span",
+   "h3",
+   "section",
+   "main",
+   "header",
+];
 
-function startClock(){
-  const now = new Date();
+function decent(str) {
 
-  const sec = now.getSeconds();
-  const min = now.getMinutes();
-  const hour = now.getHours();
+   let strArr = str.split(".");
+   let classArr = [];
 
-  const secDeg = (sec / 60) * 360;
-  const minDeg = (min / 60) * 360;
-  const hourDeg = (hour / 12) * 360;
+   strArr.forEach((el) => {
+      htmlElemArr.some((htmlEl) => {
+         if (htmlEl === el) {
+            classArr.push(htmlEl);
+         }
+      });
 
-  secHand.style.transform = `rotate(${secDeg + 90}deg)`;
-  minHand.style.transform = `rotate(${minDeg + 90}deg)`;
-  hourHand.style.transform = `rotate(${hourDeg + 90}deg)`;
+      if (el.includes("--")) {
+         let slice = el.slice(0, el.indexOf("--"));
+         classArr.push(`[class=*="${slice + "--"}"]`);
+      }
+   });
+
+   console.log(classArr.join(""));
 }
 
-setInterval(() => {
-  startClock()
-}, 1000);
+decent("div.heading--2eONR.heading-2--1OnX8.title--3yncE.block--3v-Ow");
