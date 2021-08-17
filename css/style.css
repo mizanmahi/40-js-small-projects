@@ -1,27 +1,109 @@
 :root {
-   --color: salmon;
+  --color-dark-blue: hsl(235, 21%, 11%);
+  --color-desaturated-blue: hsl(235, 24%, 19%);
+  --color-grayish-blue: hsl(236, 33%, 92%);
+  --color-dark-g-blue: hsl(234, 11%, 52%);
 }
 
 * {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 body {
-   height: 100vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background: linear-gradient(75deg, var(--color), orchid);
+  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  background: linear-gradient(45deg, tomato, orchid);
 }
 
-.container {
-   color: #fff;
-   font-size: 1.5rem;
-   font-weight: bold;
-   text-align: center;
-   
-   
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+#calculator {
+   width: 320px;
+}
+
+.screen {
+   margin-bottom: .5rem;
+}
+
+input {
+   width: 100%;
+   border: 0;
+   padding: 5px;
+   background: var(--color-grayish-blue);
+   height: 80px;
+   border: 2px solid transparent;
+   border-radius: 5px;
+   font-size: 2rem;
+   color: var(--color-desaturated-blue);
+}
+
+input:focus {
+   outline: 0;
+   border: 2px solid var(--color-desaturated-blue);
+}
+
+.btns {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 1.5rem;
+  margin-right: .5rem;
+}
+
+.key {
+  background: var(--color-dark-blue);
+  color: var(--color-grayish-blue);
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 1px;
+
+}
+
+.number:hover {
+  background: var(--color-desaturated-blue);
+}
+
+.operators {
+  font-size: 1.5rem;
+}
+
+.operator {
+  background: var(--color-grayish-blue);
+  color: var(--color-dark-blue);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+.operand:hover {
+  filter: brightness(90%);
+}
+
+.pressed {
+   background: var(--color-dark-blue);
+   color: var(--color-grayish-blue);
+}
